@@ -85,12 +85,16 @@ class KNearestNeighbor:
     num_train = self.X_train.shape[0]
     dists = np.zeros((num_test, num_train))
     for i in xrange(num_test):
-        dists[i, :] = np.sqrt(np.sum(np.square(self.X_train - X[i, :]), axis=1))
-        pass
-     
-      # TODO:                                                               
-      # Compute the l2 distance between the ith test point and all training 
-      # points, and store the result in dists[i, :].                        
+      #######################################################################
+      # TODO:                                                               #
+      # Compute the l2 distance between the ith test point and all training #
+      # points, and store the result in dists[i, :].                        #
+      #######################################################################
+      pass
+      #######################################################################
+      #                         END OF YOUR CODE                            #
+      #######################################################################
+    return dists                      
       
       
       
