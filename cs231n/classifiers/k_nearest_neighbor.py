@@ -89,6 +89,7 @@ class KNearestNeighbor:
       # TODO:                                                               #
       # Compute the l2 distance between the ith test point and all training #
       # points, and store the result in dists[i, :].                        #
+      dists[i,:] =  np.sqrt(np.sum(np.square(self.X_train - X[i,:]), axis = 1))
       #######################################################################
       pass
       #######################################################################
@@ -110,25 +111,29 @@ class KNearestNeighbor:
     num_test = X.shape[0]
     num_train = self.X_train.shape[0]
     dists = np.zeros((num_test, num_train)) 
-    
-    test_sum = np.sum(np.square(X), axis=1) # num_test x 1
-    train_sum = np.sum(np.square(self.X_train), axis=1) # num_train x 1
-    inner_product = np.dot(X, self.X_train.T) # num_test x num_train
-    dists = np.sqrt(-2 * inner_product + test_sum.reshape(-1, 1) + train_sum)
-    
     #########################################################################
     # TODO:                                                                 #
     # Compute the l2 distance between all test points and all training      #
     # points without using any explicit loops, and store the result in      #
     # dists.                                                                #
+    #                                                                       #
+    # You should implement this function using only basic array operations; #
+    # in particular you should not use functions from scipy.                #
+    #                                                                       #
     # HINT: Try to formulate the l2 distance using matrix multiplication    #
     #       and two broadcast sums.                                         #
     #########################################################################
+    squared_test = np.square(X, axis=1)
+    squared_train = np.square(self.X_train, axis=1)
+    add = squared_test + squared_train
+    return add
+    dot = np.dot(X, self.X_train.T)
+    dists = np.sqrt(squared_test + squared_train - 2 * dot)
     pass
     #########################################################################
     #                         END OF YOUR CODE                              #
     #########################################################################
-    return dists
+    #return dists
 
   def predict_labels(self, dists, k=1):
     """
