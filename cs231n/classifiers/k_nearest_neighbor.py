@@ -123,17 +123,15 @@ class KNearestNeighbor:
     # HINT: Try to formulate the l2 distance using matrix multiplication    #
     #       and two broadcast sums.                                         #
     #########################################################################
-    squared_test = np.square(X, axis=1)
-    squared_train = np.square(self.X_train, axis=1)
-    add = squared_test + squared_train
-    return add
-    dot = np.dot(X, self.X_train.T)
-    dists = np.sqrt(squared_test + squared_train - 2 * dot)
-    pass
-    #########################################################################
-    #                         END OF YOUR CODE                              #
-    #########################################################################
-    #return dists
+    num_test = X.shape[0]
+    num_train = self.X_train.shape[0]
+    dists = np.zeros((num_test, num_train))
+    M = np.dot(X, self.X_train.T)
+    te = np.square(X).sum(axis = 1)
+    tr = np.square(self.X_train).sum(axis = 1)
+    dists = np.sqrt(-2*M+tr+np.matrix(te).T)
+    return dists
+   
 
   def predict_labels(self, dists, k=1):
     """
