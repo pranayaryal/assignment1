@@ -15,8 +15,10 @@ class KNearestNeighbor:
     X - A num_train x dimension array where each row is a training point.
     y - A vector of length num_train, where y[i] is the label for X[i, :]
     """
+    
     self.X_train = X
     self.y_train = y
+    
     
   def predict(self, X, k=1, num_loops=0):
     """
@@ -123,8 +125,6 @@ class KNearestNeighbor:
     # HINT: Try to formulate the l2 distance using matrix multiplication    #
     #       and two broadcast sums.                                         #
     #########################################################################
-    num_test = X.shape[0]
-    num_train = self.X_train.shape[0]
     dists = np.zeros((num_test, num_train))
     M = np.dot(X, self.X_train.T)
     te = np.square(X).sum(axis = 1)
@@ -161,6 +161,7 @@ class KNearestNeighbor:
       # Hint: Look up the function numpy.argsort.                             #
         
       k_nearest_indexes = dists[i].argsort()[0:k, ]
+      
       closest_y = self.y_train[k_nearest_indexes]
       
       #########################################################################
@@ -172,6 +173,7 @@ class KNearestNeighbor:
       # Store this label in y_pred[i]. Break ties by choosing the smaller     #
       # label.                                                                #
       counts = np.bincount(closest_y)
+      
       label = np.argmax(counts)
       y_pred[i] = label
       #########################################################################
