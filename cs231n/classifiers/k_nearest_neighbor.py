@@ -7,6 +7,7 @@ class KNearestNeighbor:
     pass
 
   def train(self, X, y):
+    
     """
     Train the classifier. For k-nearest neighbors this is just 
     memorizing the training data.
@@ -18,6 +19,7 @@ class KNearestNeighbor:
     
     self.X_train = X
     self.y_train = y
+    
     
     
   def predict(self, X, k=1, num_loops=0):
@@ -147,6 +149,7 @@ class KNearestNeighbor:
         ith test point.
     """
     num_test = dists.shape[0]
+   
     y_pred = np.zeros(num_test)
     for i in xrange(num_test):
       # A list of length k storing the labels of the k nearest neighbors to
