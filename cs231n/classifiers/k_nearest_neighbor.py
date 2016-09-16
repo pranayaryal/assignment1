@@ -165,7 +165,7 @@ class KNearestNeighbor:
         
       k_nearest_indexes = dists[i].argsort()[0:k, ]
       
-      closest_y = self.y_train[k_nearest_indexes]
+      closest_y = self.y_train[k_nearest_indexes ]
       
       #########################################################################
       pass
