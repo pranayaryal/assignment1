@@ -1,4 +1,5 @@
 import numpy as np
+from collections import Counter
 
 class KNearestNeighbor:
   """ a kNN classifier with L2 distance """
@@ -163,10 +164,11 @@ class KNearestNeighbor:
       # neighbors. Store these labels in closest_y.                           #
       # Hint: Look up the function numpy.argsort.                             #
         
-      k_nearest_indexes = dists[i].argsort()[0:k, ]
+      #k_nearest_indexes = np.argsort(dists[i]).flatten()[:k]
+      labels = self.y_train[np.argsort(dists[i,:])].flatten()
       
-      closest_y = self.y_train[k_nearest_indexes ]
-      
+      #closest_y = self.y_train[k_nearest_indexes ]
+      closest_y = labels[0:k]
       #########################################################################
       pass
       #########################################################################
@@ -174,11 +176,12 @@ class KNearestNeighbor:
       # Now that you have found the labels of the k nearest neighbors, you    #
       # need to find the most common label in the list closest_y of labels.   #
       # Store this label in y_pred[i]. Break ties by choosing the smaller     #
-      # label.                                                                #
-      counts = np.bincount(closest_y)
+      # label.#
+      c = Counter(closest_y)
+      #counts = np.bincount(closest_y)
       
-      label = np.argmax(counts)
-      y_pred[i] = label
+      #label = np.argmax(counts)
+      y_pred[i] = y_pred[i] = c.most_common(1)[0][0]
       #########################################################################
       pass
       #########################################################################

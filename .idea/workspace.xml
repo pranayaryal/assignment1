@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="adc13b2f-5d7a-48a6-866d-dbfa6c047a0a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.ipynb_checkpoints/knn-checkpoint.ipynb" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/knn-checkpoint.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cs231n/classifiers/linear_svm.py" afterPath="$PROJECT_DIR$/cs231n/classifiers/linear_svm.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cs231n/classifiers/k_nearest_neighbor.py" afterPath="$PROJECT_DIR$/cs231n/classifiers/k_nearest_neighbor.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/knn.ipynb" afterPath="$PROJECT_DIR$/knn.ipynb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svm.ipynb" afterPath="$PROJECT_DIR$/svm.ipynb" />
     </list>
@@ -26,16 +26,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="svm.ipynb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/svm.ipynb">
+      <file leaf-file-name="knn.ipynb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/knn.ipynb">
           <provider selected="true" editor-type-id="ipnb-editor">
             <state>
-              <selected id="19" />
+              <selected id="-1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="linear_classifier.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="svm.ipynb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/svm.ipynb">
+          <provider selected="true" editor-type-id="ipnb-editor">
+            <state>
+              <selected id="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="linear_classifier.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cs231n/classifiers/linear_classifier.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-72">
@@ -74,8 +83,8 @@
       <file leaf-file-name="linear_svm.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cs231n/classifiers/linear_svm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="60" column="42" selection-start-line="60" selection-start-column="42" selection-end-line="60" selection-end-column="42" />
+            <state relative-caret-position="-3144">
+              <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -412,35 +421,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/knn.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python2.7/dist-packages/prompt_toolkit/filters/cli.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="850">
           <caret line="220" column="6" selection-start-line="220" selection-start-column="6" selection-end-line="220" selection-end-column="6" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cs231n/classifiers/linear_svm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="60" column="42" selection-start-line="60" selection-start-column="42" selection-end-line="60" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/svm.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="19" />
         </state>
       </provider>
     </entry>
@@ -471,6 +456,30 @@
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs231n/classifiers/linear_svm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3144">
+          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knn.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/svm.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="17" />
         </state>
       </provider>
     </entry>
