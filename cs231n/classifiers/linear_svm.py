@@ -119,6 +119,4 @@ def svm_loss_vectorized(W, X, y, reg):
   # Regularize
   dW += reg * W
 
-  print dW.shape
-
   return loss, dW
