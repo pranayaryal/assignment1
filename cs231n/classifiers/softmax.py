@@ -74,19 +74,29 @@ def softmax_loss_vectorized(W, X, y, reg):
   loss = 0.0
   scores = W.dot(X)
     
-  scores -= np.max(scores)
+  scores -= np.max(scores)##subtracting from max to speed it up
 
   normalized = np.exp(scores) / np.sum(np.exp(scores), axis=0)
   
   true_class_prob = np.choose(y, normalized)
-  
+ 
   loss -= np.log(true_class_prob)
   
   loss = np.average(loss)#average over the num_classes
   
-  loss += 0.5 * reg * np.sum(W * W)
+  loss += 0.5 * reg * np.sum(W * W)#add regularization
   
+  truth_table = np.equal(normalized, true_class_prob)
+    
+  normalized[truth_table] = normalized[truth_table] - 1
+
+  dW += np.dot(normalized, X.T)
+    
+  dW /= num_train
+
+  dW += reg * W
   
+                        
   
   #############################################################################
   # TODO: Compute the softmax loss and its gradient using no explicit loops.  #
@@ -99,4 +109,4 @@ def softmax_loss_vectorized(W, X, y, reg):
   #                          END OF YOUR CODE                                 #
   #############################################################################
 
-  #return loss, dW
+  return loss, dW
